@@ -4,19 +4,16 @@
 <meta charset="UTF-8">
 <title>Formulario de Registro</title>
 
-
-
 <style>
 
 body{
-  <a href="hojadevida.html" style="font-size: 20px; color: blue; font-weight: bold;">📄 Ver mi Hoja de Vida</a>
 font-family: Arial, Helvetica, sans-serif;
 background: linear-gradient(135deg,#000000,#434343);
-
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+margin: 0;
 }
 
 .formulario{
@@ -41,6 +38,7 @@ border:2px solid #00bfff;
 border-radius:5px;
 background:#2c3e50;
 color:white;
+box-sizing: border-box; /* Esto evita que los inputs se salgan del cuadro */
 }
 
 input:focus,select:focus{
@@ -71,6 +69,21 @@ background:#1b3ed6;
 
 a{
 color:#4ea3ff;
+text-decoration: none;
+}
+
+a:hover{
+text-decoration: underline;
+}
+
+/* Estilo especial para que el botón de la hoja de vida resalte */
+.enlace-hoja {
+display: block;
+text-align: center;
+margin: 15px 0;
+font-weight: bold;
+font-size: 16px;
+color: #00bfff;
 }
 
 </style>
@@ -122,7 +135,7 @@ required>
 
 <input type="password"
 placeholder="Ingrese su contraseña"
-pattern="(?=.[A-Z])(?=(?:.[a-z]){2,})(?=(?:.*[0-9]){5,})[A-Za-z0-9!?\-+/&$]{16}"
+pattern="(?=.*[A-Z])(?=(?:.*[a-z]){2,})(?=(?:.*[0-9]){5,})[A-Za-z0-9!?\-+/&$]{16}"
 title="16 caracteres con: 1 mayúscula, 2 minúsculas, 5 números y símbolos !?-+/&$"
 required>
 
@@ -134,9 +147,11 @@ required>
 <input type="text" placeholder="Ingrese su hobbie">
 
 <p>
-<input type="checkbox" required> 
+<input type="checkbox" required> 
 Estoy de acuerdo con <a href="#">términos y condiciones</a>
 </p>
+
+<a href="hojadevida.html" class="enlace-hoja">📄 Ver mi Hoja de Vida</a>
 
 <div class="botones">
 <button type="submit">Registrar</button>
